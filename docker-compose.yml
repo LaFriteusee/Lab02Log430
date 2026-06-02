@@ -3,6 +3,8 @@ services:
     build: .
     volumes:
       - .:/app
+    ports:
+      - "5000:5000"
     networks:
       - labo02-network
     depends_on:
