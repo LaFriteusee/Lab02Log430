@@ -1,10 +1,6 @@
--- Create database
+-- Create database 
 CREATE DATABASE IF NOT EXISTS labo02_db;
 USE labo02_db;
-
--- Ensure the app user has full access (MYSQL_USER env var doesn't always grant reliably)
-GRANT ALL PRIVILEGES ON labo02_db.* TO 'labo02'@'%';
-FLUSH PRIVILEGES;
 
 -- Users table
 DROP TABLE IF EXISTS users;
@@ -64,8 +60,3 @@ INSERT INTO products (name, sku, price) VALUES
 INSERT INTO orders (user_id, total_amount) VALUES
 (1, 1999.99),
 (2, 59.50);
-
--- Mock data: order items (needed for best-sellers report via Redis sync)
-INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES
-(1, 1, 1, 1999.99),
-(2, 2, 1, 59.50);
