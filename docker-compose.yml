@@ -1,6 +1,7 @@
 services:
   store_manager:
     build: .
+    container_name: store_manager_cli
     volumes:
       - .:/app
     ports:
@@ -45,7 +46,7 @@ services:
       - labo02-network
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
-      interval: 1m
+      interval: 5s
       timeout: 10s
       retries: 5
       start_period: 10s
