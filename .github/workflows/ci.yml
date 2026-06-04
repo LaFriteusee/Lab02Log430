@@ -16,7 +16,7 @@ jobs:
           echo "DB_PORT=3306" >> .env
           echo "DB_NAME=labo02_db" >> .env
           echo "DB_USER=labo02" >> .env
-          echo "DB_PASS=labo02" >> .env
+          echo "DB_PASSWORD=labo02" >> .env
           echo "REDIS_HOST=redis" >> .env
           echo "REDIS_PORT=6379" >> .env
           echo "REDIS_DB=0" >> .env
