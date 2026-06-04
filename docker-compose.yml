@@ -15,6 +15,7 @@ services:
       
   mysql:
     image: mysql:8.4.7
+    container_name: mysql
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -30,9 +31,9 @@ services:
       - labo02-network
     healthcheck:
       test: ["CMD-SHELL", "mysqladmin ping -h localhost -u root -proot"]
-      interval: 1m
+      interval: 5s
       timeout: 10s
-      retries: 5
+      retries: 12
       start_period: 10s
 
   redis:
