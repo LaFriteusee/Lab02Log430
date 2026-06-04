@@ -130,3 +130,17 @@ def get_best_sellers():
 ```
 
 Avec cette approche, le rapport des articles les plus vendus est généré entièrement depuis Redis sans requête MySQL.
+
+---
+
+## Annexe A – CI et Self-Hosted Runner
+
+![CI local](image_rapport/CI_local.png)
+
+![Self-hosted runner](image_rapport/Self_host.png)
+
+---
+
+## Annexe B – Tests
+
+![Résultats pytest](image_rapport/pytest.png)
