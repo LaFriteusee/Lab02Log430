@@ -114,7 +114,7 @@ Cette méthode est appelée dans `delete_order()` après le `session.commit()` d
 
 Non, les informations initiales dans Redis (uniquement `user_id` et `total` par commande) ne sont pas suffisantes pour générer ce rapport. Il faudrait également connaître quels produits ont été commandés et en quelle quantité.
 
-Pour résoudre ce problème, nous avons ajouté dans Redis un compteur par produit, mis à jour à chaque nouvelle commande via `r.incr()` (voir Question 3). Cela crée des clés de la forme `product:{id}` dont la valeur représente la quantité totale vendue.
+Pour palier ce problème, nous avons ajouté dans Redis un compteur par produit, mis à jour à chaque nouvelle commande via `r.incr()`. Cela crée des clés de la forme `product:{id}` dont la valeur représente la quantité totale vendue.
 
 ```python
 # queries/read_order.py
